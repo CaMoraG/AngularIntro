@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Usuario } from '../models/Usuario';
 import { HttpClient } from '@angular/common/http';
 import { Arrendador } from '../models/Arrendador';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class UsuarioService {
       new Usuario(3, "Francisco", "Márquez", ""),
       new Usuario(4, "Miguel", "Márquez", ""),
     ]);
+  }
+
+  getArrendadoresExternoAxios(): Promise< Arrendador[] > {
+    return axios.get(this.apiUrl).then(response => response.data);
   }
 
   getArrendadores(): Observable< Arrendador[] > {

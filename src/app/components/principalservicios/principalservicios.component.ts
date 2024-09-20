@@ -30,7 +30,10 @@ export class PrincipalserviciosComponent {
     // this.usuariosService.getUsuariosInterno().subscribe( response =>{
     //   this.datosModelosService  = response;
     // } );
-    this.usuariosService.getArrendadores().subscribe( response =>{
+    //this.usuariosService.getArrendadores().subscribe( response =>{
+      //this.datosModelosServiceArrendadores  = response;
+    //});
+    this.usuariosService.getArrendadoresExternoAxios().then( response =>{
       this.datosModelosServiceArrendadores  = response;
     });
   }
